@@ -1276,14 +1276,14 @@ wheels = [
 
 [[package]]
 name = "gitpython"
-version = "3.1.46"
+version = "3.1.52"
 source = { registry = "https://pypi.org/simple/" }
 dependencies = [
     { name = "gitdb" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/df/b5/59d16470a1f0dfe8c793f9ef56fd3826093fc52b3bd96d6b9d6c26c7e27b/gitpython-3.1.46.tar.gz", hash = "sha256:400124c7d0ef4ea03f7310ac2fbf7151e09ff97f2a3288d64a440c584a29c37f", size = 215371, upload-time = "2026-01-01T15:37:32.073Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e5/fd/df0bafa4eb5ea2f51e1adee9f7a94c8e62c5d180e65117045dfca3439c8a/gitpython-3.1.52.tar.gz", hash = "sha256:de0a8ad86274c6e75ae8b37dd055ba68f19818c813108642263227b20775b48e", size = 223726, upload-time = "2026-07-16T03:15:59.599Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6a/09/e21df6aef1e1ffc0c816f0522ddc3f6dcded766c3261813131c78a704470/gitpython-3.1.46-py3-none-any.whl", hash = "sha256:79812ed143d9d25b6d176a10bb511de0f9c67b1fa641d82097b0ab90398a2058", size = 208620, upload-time = "2026-01-01T15:37:30.574Z" },
+    { url = "https://files.pythonhosted.org/packages/8d/90/04dff7c1e176bb1c3011ef1647393d368790da710d8dde1cdcfad301f45a/gitpython-3.1.52-py3-none-any.whl", hash = "sha256:79a36ee1f83523214a3f72d56cf1c4e490d577dc61af77e43dfe5862bd9da01a", size = 215366, upload-time = "2026-07-16T03:15:58.239Z" },
 ]
 
 [[package]]
@@ -1449,7 +1449,7 @@ wheels = [
 
 [[package]]
 name = "headroom-ai"
-version = "0.24.0"
+version = "0.25.0"
 source = { editable = "." }
 dependencies = [
     { name = "ast-grep-cli" },
@@ -1619,6 +1619,10 @@ proxy-prod = [
     { name = "websockets" },
     { name = "zstandard" },
 ]
+pytorch-mps = [
+    { name = "sentence-transformers", marker = "sys_platform == 'darwin'" },
+    { name = "torch", marker = "sys_platform == 'darwin'" },
+]
 relevance = [
     { name = "fastembed" },
     { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version < '3.11'" },
@@ -1712,6 +1716,7 @@ requires-dist = [
     { name = "rich", specifier = ">=13.0.0" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.1.0" },
     { name = "scikit-learn", marker = "extra == 'evals'", specifier = ">=1.3.0" },
+    { name = "sentence-transformers", marker = "sys_platform == 'darwin' and extra == 'pytorch-mps'", specifier = ">=2.2.0" },
     { name = "sentence-transformers", marker = "extra == 'dev'", specifier = ">=2.2.0,<6.0" },
     { name = "sentence-transformers", marker = "extra == 'evals'", specifier = ">=2.2.0,<6.0" },
     { name = "sentence-transformers", marker = "extra == 'memory'", specifier = ">=2.2.0,<6.0" },
@@ -1722,6 +1727,7 @@ requires-dist = [
     { name = "strands-agents", marker = "extra == 'strands'", specifier = ">=0.1.0" },
     { name = "tiktoken", specifier = ">=0.5.0" },
     { name = "tomli", marker = "python_full_version < '3.11'", specifier = ">=2.0.0" },
+    { name = "torch", marker = "sys_platform == 'darwin' and extra == 'pytorch-mps'", specifier = ">=2.0.0" },
     { name = "torch", marker = "extra == 'ml'", specifier = ">=2.0.0" },
     { name = "torch", marker = "extra == 'voice'", specifier = ">=2.0.0" },
     { name = "trafilatura", marker = "extra == 'html'", specifier = ">=1.6.0" },
@@ -1736,7 +1742,7 @@ requires-dist = [
     { name = "websockets", marker = "extra == 'proxy'", specifier = ">=13.0" },
     { name = "zstandard", marker = "extra == 'proxy'", specifier = ">=0.20.0" },
 ]
-provides-extras = ["proxy", "proxy-prod", "code", "ml", "memory", "memory-stack", "relevance", "image", "reports", "otel", "anyllm", "langchain", "agno", "strands", "mcp", "voice", "voice-train", "evals", "bedrock", "html", "benchmark", "dev", "all"]
+provides-extras = ["proxy", "proxy-prod", "code", "ml", "memory", "memory-stack", "pytorch-mps", "relevance", "image", "reports", "otel", "anyllm", "langchain", "agno", "strands", "mcp", "voice", "voice-train", "evals", "bedrock", "html", "benchmark", "dev", "all"]
 
 [[package]]
 name = "hf-xet"
